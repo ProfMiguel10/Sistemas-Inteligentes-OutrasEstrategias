@@ -1,0 +1,32 @@
+class Aluno {
+    String nome;
+    int idade;
+    String dificuldade;
+    String orientacaoPedagogica;
+    void orientar() { // Procedimento associado ao frame (slot procedural)
+        if (dificuldade.equalsIgnoreCase("matemática")) {
+            orientacaoPedagogica = "Reforço em lógica e resolução de exercícios.";
+        } else if (dificuldade.equalsIgnoreCase("leitura")) {
+            orientacaoPedagogica = "Atividades de interpretação de texto.";
+        } else {
+            orientacaoPedagogica = "Acompanhamento pedagógico geral.";
+        }
+    }
+    // Exibição do frame completo
+    void exibirFrame() {
+        System.out.println("Aluno: " + nome);
+        System.out.println("Idade: " + idade);
+        System.out.println("Dificuldade: " + dificuldade);
+        System.out.println("Orientação pedagógica: " + orientacaoPedagogica);
+    }
+}
+public class Frame {
+    public static void main(String[] args) {
+        Aluno a = new Aluno();
+        a.nome = "Maria Vitória";
+        a.idade = 15;
+        a.dificuldade = "matemática";
+        a.orientar();     // Ativação do procedimento do frame
+        a.exibirFrame();  // Visualização dos slots e valores
+    }
+}
