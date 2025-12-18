@@ -1,0 +1,24 @@
+class Ensino {
+ String nome;
+ void aplicarMetodologia() {
+     System.out.println("Aplicação de uma metodologia ");
+ }
+}
+//Subclasse (é-um)
+class EnsinoFormal extends Ensino {
+ void aplicarMetodologia() {
+     System.out.println("Metodologia aplicada.");
+ }
+}
+//Subclasse mais específica
+class EnsinoSuperior extends EnsinoFormal {
+ void aplicarMetodologia() {
+     System.out.println("Aulas teóricas e práticas, projetos integradores e atividades extensionistas.");
+ }
+}
+public class Taxonomia {
+ public static void main(String[] args) {
+     Ensino ensino = new EnsinoSuperior();
+     ensino.aplicarMetodologia(); // Herança
+ }
+}
