@@ -1,0 +1,34 @@
+import java.util.*;
+class Conceito {//Nó da rede semântica (conceito)
+ String nome;
+ List<String> relacoes = new ArrayList<>();
+
+ Conceito(String nome) {
+     this.nome = nome;
+ }
+ void adicionarRelacao(String relacao) {
+     relacoes.add(relacao);
+ }
+}
+public class RedeSemantica {
+ public static void main(String[] args) {// Conceitos do domínio de gestão
+     Conceito gestor = new Conceito("Gestor");
+     Conceito planejamentoEstrategico = new Conceito("Planejamento Estratégico");
+     Conceito tomadaDecisao = new Conceito("Tomada de Decisão");
+     Conceito indicadorDesempenho = new Conceito("Indicador de Desempenho");
+     // Relações semânticas
+     gestor.adicionarRelacao("realiza Planejamento Estratégico");
+     gestor.adicionarRelacao("utiliza Indicador de Desempenho");
+     planejamentoEstrategico.adicionarRelacao("apoia Tomada de Decisão");
+     tomadaDecisao.adicionarRelacao("é-orientada por Indicador de Desempenho");
+     // Exibição da rede semântica
+     System.out.println("Conceito: " + gestor.nome);
+     for (String r : gestor.relacoes) {
+         System.out.println(" - " + r);
+     }
+     System.out.println("\nConceito: " + planejamentoEstrategico.nome);
+     for (String r : planejamentoEstrategico.relacoes) {
+         System.out.println(" - " + r);
+     }
+ }
+}
